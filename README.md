@@ -148,7 +148,23 @@ base: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '/',
 ### Workflow Files
 
 - `.github/workflows/ci.yml` - Build verification workflow
-- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow
+- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow (recommended)
+- `.github/workflows/deploy-simple.yml` - Alternative simpler deployment workflow
+
+### Deployment Not Working?
+
+If you're experiencing issues with deployment, see **[DEPLOYMENT.md](DEPLOYMENT.md)** for:
+- Detailed setup instructions
+- Common issues and solutions
+- Step-by-step troubleshooting guide
+- Alternative deployment methods
+- Manual deployment options
+
+**Quick Checks:**
+1. GitHub Pages enabled? (Settings → Pages → Source: GitHub Actions)
+2. Workflow permissions? (Settings → Actions → Workflow permissions: Read and write)
+3. On main/master branch? Workflow only runs on these branches
+4. Check Actions tab for error logs
 
 ## Learn More
 
