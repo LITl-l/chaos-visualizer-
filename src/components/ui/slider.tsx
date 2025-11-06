@@ -7,7 +7,7 @@ export interface SliderProps extends JSX.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function Slider(props: SliderProps) {
-  const [local, others] = splitProps(props, ["class", "value", "onValueChange", "onInput"]);
+  const [local, others] = splitProps(props, ["class", "value", "onValueChange"]);
 
   return (
     <input
@@ -21,7 +21,6 @@ export function Slider(props: SliderProps) {
       )}
       value={local.value}
       onInput={(e) => {
-        local.onInput?.(e);
         local.onValueChange?.(parseFloat(e.currentTarget.value));
       }}
       {...others}
