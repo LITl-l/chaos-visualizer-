@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - claude/chaos-theory-implementation-011CUrRiefFGT4BNbnJiDLXw
   workflow_dispatch:
 
 jobs:

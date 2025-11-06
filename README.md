@@ -118,14 +118,17 @@ The CI workflow runs automatically on all branches and pull requests.
 
 ### Continuous Deployment
 
-Automatic deployment to GitHub Pages is configured for the main branch:
+Automatic deployment to GitHub Pages is configured for:
+- `main` branch
+- `master` branch
+- `claude/chaos-theory-implementation-011CUrRiefFGT4BNbnJiDLXw` branch (current development branch)
 
 #### Setup GitHub Pages
 
 1. Go to your repository **Settings** → **Pages**
 2. Under "Build and deployment":
    - **Source**: Select "GitHub Actions"
-3. Push to the `main` or `master` branch to trigger deployment
+3. Push to any of the configured branches to trigger deployment
 
 #### Manual Deployment
 
@@ -163,7 +166,7 @@ If you're experiencing issues with deployment, see **[DEPLOYMENT.md](DEPLOYMENT.
 **Quick Checks:**
 1. GitHub Pages enabled? (Settings → Pages → Source: GitHub Actions)
 2. Workflow permissions? (Settings → Actions → Workflow permissions: Read and write)
-3. On main/master branch? Workflow only runs on these branches
+3. On a configured branch? Workflow runs on main/master/claude branches
 4. Check Actions tab for error logs
 
 ## Learn More
