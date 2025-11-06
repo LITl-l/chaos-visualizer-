@@ -6,6 +6,6 @@ export default defineConfig({
   base: '/chaos-visualizer-/',
   build: {
     target: 'esnext',
-    outDir: '.',
+    outDir: 'dist',
   },
 });
