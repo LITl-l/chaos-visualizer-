@@ -104,6 +104,52 @@ src/
 └── index.css               # Global styles
 ```
 
+## CI/CD
+
+### Continuous Integration
+
+The project includes automated CI workflows that run on every push and pull request:
+
+- **Build Verification**: Ensures the application builds successfully
+- **Type Checking**: Validates TypeScript types
+- **Artifact Upload**: Stores build artifacts for review
+
+The CI workflow runs automatically on all branches and pull requests.
+
+### Continuous Deployment
+
+Automatic deployment to GitHub Pages is configured for the main branch:
+
+#### Setup GitHub Pages
+
+1. Go to your repository **Settings** → **Pages**
+2. Under "Build and deployment":
+   - **Source**: Select "GitHub Actions"
+3. Push to the `main` or `master` branch to trigger deployment
+
+#### Manual Deployment
+
+You can also trigger deployment manually:
+
+1. Go to **Actions** tab in your repository
+2. Select "Deploy to GitHub Pages" workflow
+3. Click "Run workflow"
+
+#### Base Path Configuration
+
+The application is configured to deploy to `https://<username>.github.io/chaos-visualizer-/`
+
+If your repository name is different, update the `base` path in `vite.config.ts`:
+
+```typescript
+base: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '/',
+```
+
+### Workflow Files
+
+- `.github/workflows/ci.yml` - Build verification workflow
+- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow
+
 ## Learn More
 
 - [Solid.js Documentation](https://solidjs.com)
